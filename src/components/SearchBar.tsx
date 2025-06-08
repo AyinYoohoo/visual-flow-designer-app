@@ -1,18 +1,28 @@
 
 import { useState } from 'react';
-import { Search, MapPin } from 'lucide-react';
+import { Search } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 
 const SearchBar = () => {
   const [searchTerm, setSearchTerm] = useState('');
-  const [location, setLocation] = useState('');
+  const [category, setCategory] = useState('');
+
+  const categories = [
+    'All Categories',
+    'Vegetables',
+    'Fruits', 
+    'Grains',
+    'Livestock',
+    'Dairy',
+    'Equipment'
+  ];
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Searching for:', { searchTerm, location });
-    // Here you would typically handle the search logic
-    alert(`Searching for "${searchTerm}" in "${location}"`);
+    console.log('Searching for:', { searchTerm, category });
+    alert(`Searching for "${searchTerm}" in category "${category || 'All Categories'}"`);
   };
 
   return (
@@ -36,16 +46,18 @@ const SearchBar = () => {
                 />
               </div>
               
-              <div className="relative">
-                <MapPin className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
-                <Input
-                  type="text"
-                  placeholder="Enter your location"
-                  value={location}
-                  onChange={(e) => setLocation(e.target.value)}
-                  className="pl-10 h-12"
-                />
-              </div>
+              <Select value={category} onValueChange={setCategory}>
+                <SelectTrigger className="h-12">
+                  <SelectValue placeholder="Select category" />
+                </SelectTrigger>
+                <SelectContent>
+                  {categories.map((cat) => (
+                    <SelectItem key={cat} value={cat}>
+                      {cat}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
               
               <Button 
                 type="submit"

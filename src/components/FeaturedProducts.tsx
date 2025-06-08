@@ -10,7 +10,9 @@ const FeaturedProducts = () => {
       rating: 5,
       reviews: 220,
       image: 'https://images.unsplash.com/photo-1546094096-0df4bcaaa337?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80',
-      inStock: true
+      inStock: true,
+      farmer: 'Ahmad Ibrahim',
+      location: 'Selangor, Malaysia'
     },
     {
       id: '2', 
@@ -19,7 +21,9 @@ const FeaturedProducts = () => {
       rating: 4,
       reviews: 156,
       image: 'https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80',
-      inStock: true
+      inStock: true,
+      farmer: 'Lim Wei Ming',
+      location: 'Kedah, Malaysia'
     },
     {
       id: '3',
@@ -28,7 +32,9 @@ const FeaturedProducts = () => {
       rating: 5,
       reviews: 189,
       image: 'https://images.unsplash.com/photo-1518569656558-1f25e69d93d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80',
-      inStock: true
+      inStock: true,
+      farmer: 'Siti Aminah',
+      location: 'Perak, Malaysia'
     },
     {
       id: '4',
@@ -37,12 +43,14 @@ const FeaturedProducts = () => {
       rating: 4,
       reviews: 78,
       image: 'https://images.unsplash.com/photo-1416879595882-3373a0480b5b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80',
-      inStock: true
+      inStock: true,
+      farmer: 'Raj Kumar',
+      location: 'Johor, Malaysia'
     }
   ];
 
   return (
-    <section className="py-16 bg-gray-50">
+    <section className="py-16 bg-gray-50" id="featured-products">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold text-gray-800 mb-4">Featured Products</h2>
