@@ -1,12 +1,11 @@
-
-import { Carrot, Apple, Wheat, Cow, Milk, Wrench } from 'lucide-react';
+import { Carrot, Apple, Wheat, Beef, Milk, Wrench } from 'lucide-react';
 
 const Categories = () => {
   const categories = [
     { name: 'Vegetables', icon: Carrot, color: 'text-green-600' },
     { name: 'Fruits', icon: Apple, color: 'text-red-600' },
     { name: 'Grains', icon: Wheat, color: 'text-yellow-600' },
-    { name: 'Livestock', icon: Cow, color: 'text-brown-600' },
+    { name: 'Livestock', icon: Beef, color: 'text-brown-600' },
     { name: 'Dairy', icon: Milk, color: 'text-blue-600' },
     { name: 'Equipment', icon: Wrench, color: 'text-gray-600' }
   ];
