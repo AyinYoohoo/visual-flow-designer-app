@@ -1,4 +1,5 @@
-import { Leaf, Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
+
+import { Leaf, Facebook, Twitter, Instagram, Linkedin, CreditCard } from 'lucide-react';
 
 const Footer = () => {
   return (
@@ -60,8 +61,22 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="border-t border-gray-600 mt-8 pt-8 text-center">
-          <p className="text-gray-300">© 2023 FarmConnect. All rights reserved.</p>
+        <div className="border-t border-gray-600 mt-8 pt-8">
+          {/* Payment Methods */}
+          <div className="flex justify-center items-center space-x-6 mb-4">
+            <span className="text-gray-300 text-sm">We accept:</span>
+            <div className="flex space-x-4">
+              <CreditCard className="h-8 w-8 text-gray-300" />
+              <div className="bg-blue-600 text-white px-3 py-1 rounded text-sm font-bold">VISA</div>
+              <div className="bg-red-600 text-white px-3 py-1 rounded text-sm font-bold">MC</div>
+              <div className="bg-blue-800 text-white px-3 py-1 rounded text-sm font-bold">AMEX</div>
+              <div className="bg-yellow-500 text-black px-3 py-1 rounded text-sm font-bold">PP</div>
+            </div>
+          </div>
+          
+          <div className="text-center">
+            <p className="text-gray-300">© 2023 FarmConnect. All rights reserved.</p>
+          </div>
         </div>
       </div>
     </footer>
