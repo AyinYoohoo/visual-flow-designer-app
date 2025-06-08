@@ -1,3 +1,4 @@
+
 import { Carrot, Apple, Wheat, Beef, Milk, Wrench } from 'lucide-react';
 
 const Categories = () => {
@@ -10,8 +11,13 @@ const Categories = () => {
     { name: 'Equipment', icon: Wrench, color: 'text-gray-600' }
   ];
 
+  const handleCategoryClick = (categoryName: string) => {
+    console.log(`Selected category: ${categoryName}`);
+    alert(`Browsing ${categoryName} products`);
+  };
+
   return (
-    <section className="py-16 bg-white">
+    <section className="py-16 bg-white" id="products">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold text-gray-800 mb-4">Shop by Category</h2>
@@ -23,15 +29,16 @@ const Categories = () => {
           {categories.map((category) => {
             const Icon = category.icon;
             return (
-              <div 
+              <button
                 key={category.name}
-                className="flex flex-col items-center p-6 bg-gray-50 rounded-lg hover:shadow-lg transition-shadow duration-300 cursor-pointer group"
+                onClick={() => handleCategoryClick(category.name)}
+                className="flex flex-col items-center p-6 bg-gray-50 rounded-lg hover:shadow-lg transition-shadow duration-300 cursor-pointer group w-full"
               >
                 <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
                   <Icon className={`h-8 w-8 ${category.color}`} />
                 </div>
                 <span className="text-lg font-medium text-gray-800">{category.name}</span>
-              </div>
+              </button>
             );
           })}
         </div>

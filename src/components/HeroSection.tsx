@@ -2,6 +2,20 @@
 import { Button } from '@/components/ui/button';
 
 const HeroSection = () => {
+  const handleShopNow = () => {
+    const productsSection = document.querySelector('#products');
+    if (productsSection) {
+      productsSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const handleSellProduce = () => {
+    const sellersSection = document.querySelector('#sellers');
+    if (sellersSection) {
+      sellersSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section className="relative h-[600px] bg-gradient-to-r from-black/50 to-black/30 overflow-hidden">
       {/* Background Image */}
@@ -25,12 +39,16 @@ const HeroSection = () => {
             Connect with local farmers and get the freshest produce at the best prices
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button className="bg-farm-green hover:bg-farm-dark-green text-white px-8 py-3 text-lg">
+            <Button 
+              className="bg-farm-green hover:bg-farm-dark-green text-white px-8 py-3 text-lg"
+              onClick={handleShopNow}
+            >
               Shop Now
             </Button>
             <Button 
               variant="outline" 
               className="border-white text-white hover:bg-white hover:text-gray-800 px-8 py-3 text-lg"
+              onClick={handleSellProduce}
             >
               Sell Your Produce
             </Button>

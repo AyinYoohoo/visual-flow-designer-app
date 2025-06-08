@@ -2,8 +2,13 @@
 import { Button } from '@/components/ui/button';
 
 const AboutSection = () => {
+  const handleLearnMore = () => {
+    console.log('Learning more about FarmConnect');
+    alert('Opening detailed information about FarmConnect');
+  };
+
   return (
-    <section className="py-16 bg-gray-50">
+    <section className="py-16 bg-gray-50" id="about">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold text-gray-800 mb-4">About FarmConnect</h2>
@@ -25,7 +30,10 @@ const AboutSection = () => {
             We believe in transparency, quality, and building lasting partnerships between farmers and their customers.
           </p>
           
-          <Button className="bg-farm-green hover:bg-farm-dark-green text-white px-8 py-3 text-lg">
+          <Button 
+            className="bg-farm-green hover:bg-farm-dark-green text-white px-8 py-3 text-lg"
+            onClick={handleLearnMore}
+          >
             Learn More About Us
           </Button>
         </div>
